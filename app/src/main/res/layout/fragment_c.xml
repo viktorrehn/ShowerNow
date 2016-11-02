@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/waterfallsmall"
+    android:weightSum="1">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView android:src="@drawable/main_header_selector"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:alpha="0.5"/>
+
+        <TextView android:id="@+id/guidetest1"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginBottom="24dp"
+                  android:layout_marginLeft="8dp"
+                  android:layout_marginRight="8dp"
+                  android:text="@string/WHAlable"
+                  android:gravity="center"
+                  android:lineSpacingExtra="8dp"
+                  android:layout_marginTop="20dp"
+                  android:textColor="#FFFFFF"
+                  android:textStyle="bold"
+                  android:textSize="20sp"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="96dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="80dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/weight2" />
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginStart="20dp"
+                    android:theme="@style/Theme.App.Base">
+                    <EditText android:id="@+id/input_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:hint="Weight"
+                        android:textColorHint="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColor="#FFFFFF"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:text="kg"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:layout_gravity="bottom"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="12dp">
+
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/height_white"
+                    android:textColorHint="#FFFFFF"
+                    android:textColorHighlight="#FFFFFF"/>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:textColor="#FFFFFF"
+                    android:theme="@style/Theme.App.Base">
+                    <EditText android:id="@+id/input_height"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:hint="Height"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:text="cm"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:layout_gravity="bottom"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/age2" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:theme="@style/Theme.App.Base">
+                    <EditText android:id="@+id/input_age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:hint="Age"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="years"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:layout_gravity="bottom"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:layout_marginBottom="-10dp"
+            android:gravity="bottom">
+
+
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="Back"
+                style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/previousPage_c"
+                android:background="@drawable/ripple_effect"
+                android:layout_toEndOf="@+id/textView"
+                android:textSize="22sp"
+                android:layout_marginTop="8dp"
+                android:textColor="#ffffff"
+                android:layout_gravity="bottom"
+                android:layout_weight="0.5"
+                android:textStyle="bold"/>
+
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="Next"
+                android:background="@drawable/ripple_effect"
+                style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/nextPage_c"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@+id/textView"
+                android:textSize="22sp"
+                android:layout_marginTop="8dp"
+                android:textColor="#ffffff"
+                android:layout_gravity="bottom"
+                android:layout_weight="0.5"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

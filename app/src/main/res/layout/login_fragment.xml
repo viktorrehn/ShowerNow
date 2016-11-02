@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/waterfallsmall">
+
+    <ImageView android:src="@drawable/main_header_selector"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="56dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp">
+
+
+
+            <ImageView android:src="@drawable/showernow2"
+                android:layout_width="wrap_content"
+                android:layout_height="72dp"
+                android:layout_marginBottom="74dp"
+                android:layout_gravity="center_horizontal" />
+
+            <!--  Email Label -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.App.Base"
+                android:layout_marginTop="1dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="15dp">
+                <EditText android:id="@+id/login_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/Email"
+                    android:textColorHint="#ffffff"
+                    android:textColorHighlight="#ffffff"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <!--  Password Label -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:theme="@style/Theme.App.Base"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="15dp">
+                <EditText android:id="@+id/login_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:inputType="textPassword"
+                    android:hint="@string/Password"
+                    android:textColorHint="#ffffff"
+                    android:textColorHighlight="#ffffff"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/login_button"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/ripple_effect"
+                android:textSize="18sp"
+                android:layout_marginTop="34dp"
+                android:layout_marginLeft="-30dp"
+                android:layout_marginRight="-30dp"
+                android:layout_marginBottom="24dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:padding="14dp"
+                android:text="@string/Login"
+                android:textStyle="bold"/>
+
+            <TextView android:id="@+id/link_signup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:text="@string/signUpLable"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="19sp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

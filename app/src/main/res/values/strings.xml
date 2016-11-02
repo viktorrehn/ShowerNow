@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Shower now</string>
+
+    <string name="Email">Your email </string>
+    <string name="Password">Password</string>
+    <string name="Login">Login </string>
+
+    <string name="weight">Your weight </string>
+
+    <string name="signUpLable">Dont have an account? Signup here! </string>
+
+    <string name="dataWarning">We NEVER share any of your data with anyone!</string>
+
+    <string name="createAccount">Create Account </string>
+
+    <string name="LoginLable">Already a member? Login! </string>
+
+    <string name="showerlable">You should shower in x hrs</string>
+
+    <string name="WHAlable">Please enter your weight, height and age for accuracy</string>
+
+    <string name="infoLable1">Help us calculate when you should shower by entering your gender, weight and age. </string>
+
+    <string name="genderLable">Please specify your gender, not specifying makes it harder to calculate but not impossible </string>
+
+
+</resources>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "38973263686",
+    "firebase_url": "https://random-showers-f5401.firebaseio.com",
+    "project_id": "random-showers-f5401",
+    "storage_bucket": "random-showers-f5401.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38973263686:android:f0e395b8bec39349",
+        "android_client_info": {
+          "package_name": "com.first.akashshrivastava.showernow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38973263686-dupsj7ftv3ei6p1vnaojfdvig7de7tcd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBYME2GGh1VC3H_VgE6cEW00JyfHuy_zI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

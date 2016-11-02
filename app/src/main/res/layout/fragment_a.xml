@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/waterfallsmall">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView android:src="@drawable/main_header_selector"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:alpha="0.5"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:layout_marginBottom="1dp"
+            android:gravity="top"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="99dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="22sp"
+                android:textColor="#FFFFFF"
+                android:lineSpacingExtra="8dp"
+                android:text="@string/infoLable1"
+                android:id="@+id/textView5"
+                android:layout_gravity="top"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:layout_marginBottom="1dp"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:src="@drawable/showerinfo"
+                android:id="@+id/imageBathroom"
+                android:gravity="bottom" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="Next"
+                android:background="@drawable/ripple_effect"
+                style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/nextPage_a"
+                android:textSize="24sp"
+                android:textColor="#ffffff"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:textStyle="bold"
+                android:typeface="normal" />
+
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>
