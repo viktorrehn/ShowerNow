@@ -22,8 +22,6 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 public class fragment_B extends Fragment implements View.OnClickListener {
 
-    Button nextButton;
-    Button previousButton;
     private DatabaseReference mDatabaseReference;
     private FirebaseAuth mFirebaseAuth;
 

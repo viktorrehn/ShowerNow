@@ -23,8 +23,6 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 public class fragment_C extends Fragment implements View.OnClickListener {
 
-    Button nextButton;
-    Button previousButton;
     EditText mweight;
     EditText mheight;
     EditText mage;

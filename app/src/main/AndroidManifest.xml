@@ -21,7 +21,9 @@
         <activity android:name=".LoginActivity">
         </activity>
 
-        <activity android:name=".ShowerActivity">
+        <activity android:name=".ShowerActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
 
         <receiver android:name=".AlarmReceiver">
