@@ -21,6 +21,10 @@
 
     <string name="infoLable1">Help us calculate when you should shower by entering your gender, weight and age. </string>
 
+    <string name="infoLable2">Everything is done automatically, enter a few details about yourself and we take care of the rest</string>
+
+    <string name="infoLable2.1">Allow permissions to the pedometer and see the magic happen!</string>
+
     <string name="genderLable">Please specify your gender, not specifying makes it harder to calculate but not impossible </string>
 
 

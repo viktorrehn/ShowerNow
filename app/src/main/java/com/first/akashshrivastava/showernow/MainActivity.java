@@ -60,7 +60,7 @@ class MyAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 
 
@@ -76,10 +76,15 @@ class MyAdapter extends FragmentPagerAdapter {
 
         if (position == 1){
 
-            fragment = new fragment_B();
+            fragment = new fragment_D();
         }
 
         if (position == 2){
+
+            fragment = new fragment_B();
+        }
+
+        if (position == 3){
 
             fragment = new fragment_C();
         }
