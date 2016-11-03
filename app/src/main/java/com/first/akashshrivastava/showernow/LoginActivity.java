@@ -120,6 +120,14 @@ public class LoginActivity extends Activity {
 
     }
 
+    @Override
+    public void onBackPressed() { //if back is pressed the application closes
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+
 
     @Override
     public void onStart() {
@@ -177,8 +185,8 @@ public class LoginActivity extends Activity {
             mlogin_email.setError(null);
         }
 
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            mlogin_password.setError("Between 4 and 10 alphanumeric characters");
+        if (password.isEmpty() || password.length() < 4 || password.length() > 12) {
+            mlogin_password.setError("Between 4 and 12 alphanumeric characters");
             valid = false;
         } else {
             mlogin_password.setError(null);

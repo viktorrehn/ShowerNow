@@ -148,7 +148,7 @@ public class ShowerActivity extends Activity implements OnDataPointListener,
                 }else if (snap.child("User").child(mFirebaseAuth.getCurrentUser().getUid()).child("gender").getValue().toString().equalsIgnoreCase("male")){
                     genderImage.setImageResource(R.drawable.male_white_outline);
                 }else if (snap.child("User").child(mFirebaseAuth.getCurrentUser().getUid()).child("gender").getValue().toString().equalsIgnoreCase("other")){
-                    genderImage.setImageResource(R.drawable.gender_neutral);
+                    genderImage.setImageResource(R.drawable.other_white_outline);
                 }
             }
 
@@ -232,6 +232,8 @@ public class ShowerActivity extends Activity implements OnDataPointListener,
     @Override
     public void onConnectionSuspended(int i) {
 
+        Toast.makeText(ShowerActivity.this, "Connection suspended", Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
@@ -270,11 +272,11 @@ public class ShowerActivity extends Activity implements OnDataPointListener,
     }
 
     //Releasing the sensor data when the app is shut......#SaveBattery
-    @Override
+     /*@Override
     protected void onStop() {
         super.onStop();
 
-        Fitness.SensorsApi.remove( mApiClient, this )
+        Fitness.SensorsApi.remove(mApiClient, this)
                 .setResultCallback(new ResultCallback<Status>() {
                     @Override
                     public void onResult(Status status) {
@@ -283,7 +285,7 @@ public class ShowerActivity extends Activity implements OnDataPointListener,
                         }
                     }
                 });
-    }
+    }*/
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {

@@ -174,8 +174,8 @@ public class SignupActivity extends AppCompatActivity {
             _emailText.setError(null);
         }
 
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            _passwordText.setError("Between 4 and 10 alphanumeric characters");
+        if (password.isEmpty() || password.length() < 4 || password.length() > 12) {
+            _passwordText.setError("Between 4 and 12 alphanumeric characters");
             valid = false;
         } else {
             _passwordText.setError(null);

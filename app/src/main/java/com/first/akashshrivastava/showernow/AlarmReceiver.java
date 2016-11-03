@@ -26,12 +26,14 @@ public class AlarmReceiver extends BroadcastReceiver {
 
          NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(context)
-                        .setSmallIcon(R.drawable.male_silhouette)
-                        .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.male_silhouette))
-                        .setContentTitle("Shower Now")
-                        .setContentText("its time to shower")
+                        .setSmallIcon(R.drawable.other_silhouette)
+                        .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.icon))
+                        .setContentTitle("Random Showers")
+                        .setContentText("We believe its time for your shower!")
                         .setContentIntent(contentIntent)
                         .setAutoCancel(true);
+
+        mBuilder.setVibrate(new long[] { 500, 500, 500 });
 
 // Gets an instance of the NotificationManager service
         NotificationManager mNotifyMgr =

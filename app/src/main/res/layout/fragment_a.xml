@@ -20,7 +20,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:weightSum="1"
-            android:layout_marginBottom="1dp"
             android:gravity="top"
             android:orientation="vertical">
 
@@ -47,7 +46,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:weightSum="1"
-            android:layout_marginBottom="1dp"
             android:gravity="bottom"
             android:orientation="vertical">
 

@@ -35,7 +35,7 @@
             android:layout_height="512dp"
             android:id="@+id/imageGender"
             android:layout_gravity="bottom|center"
-            android:src="@drawable/rectangle" />
+            android:src="@drawable/gender_neutral" />
 
         <com.github.clans.fab.FloatingActionMenu
             android:id="@+id/menu"
