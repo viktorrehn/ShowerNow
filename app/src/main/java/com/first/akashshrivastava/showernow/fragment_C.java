@@ -101,8 +101,8 @@ public class fragment_C extends Fragment implements View.OnClickListener {
                 mDatabase.child("User").child(mFirebaseAuth.getCurrentUser().getUid()).child("Height").setValue(newheight);
                 mDatabase.child("User").child(mFirebaseAuth.getCurrentUser().getUid()).child("Weight").setValue(newweight);
 
-                Intent i = new Intent(getActivity(), ShowerActivity.class);
-                startActivity(i);
+                ((MainActivity) getActivity()).setNextPage();
+
             }
 
         }else if(view.getId() == R.id.previousPage_c){

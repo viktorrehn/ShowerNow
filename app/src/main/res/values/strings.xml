@@ -13,6 +13,10 @@
 
     <string name="createAccount">Create Account </string>
 
+    <string name="Next">Next </string>
+    <string name="Back">Back </string>
+
+
     <string name="LoginLable">Already a member? Login! </string>
 
     <string name="showerlable">You should shower in x hrs</string>
@@ -26,6 +30,8 @@
     <string name="infoLable2.1">Allow permissions to the pedometer and see the magic happen!</string>
 
     <string name="genderLable">Please specify your gender, not specifying makes it harder to calculate but not impossible </string>
+
+    <string name="fluffinessLable3">Every body type is beautiful, which one is yours? :) </string>
 
 
 </resources>

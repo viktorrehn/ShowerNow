@@ -16,6 +16,10 @@ public class MainActivity extends AppCompatActivity{
 
     ViewPager mViewPager = null;
     public String gender = null;
+    public String fluffiness = null;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +64,7 @@ class MyAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return 5;
     }
 
 
@@ -87,6 +91,10 @@ class MyAdapter extends FragmentPagerAdapter {
         if (position == 3){
 
             fragment = new fragment_C();
+        }
+        if (position == 4){
+
+            fragment = new fragment_E();
         }
 
         return fragment;

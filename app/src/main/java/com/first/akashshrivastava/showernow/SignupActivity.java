@@ -64,15 +64,6 @@ public class SignupActivity extends AppCompatActivity {
 }*/
 
 
-        // TODO: Signout logic to be implemented in main_shower_activity under fab menu..
-        //SIGN******OUT******LOGIC******
-        // Signout and call activity
-
-        // mFirebaseAuth.signOut();
-        //  Intent i = new Intent(SignupActivity.this, RANDOM_BLAH_BLAH.class);
-        // startActivity(i);
-
-
         //PrograssDialog obj
         mProgressDialog = new ProgressDialog(this);
 
@@ -148,7 +139,11 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     public void onSignupFailed() {
-        Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
+        Toast.makeText(getBaseContext(), "Login failed, please try again :(", Toast.LENGTH_LONG).show();
+
+//        On login failed, re open signup activity
+          Intent i = new Intent(SignupActivity.this, SignupActivity.class);
+          startActivity(i);
 
         _signupButton.setEnabled(true);
     }

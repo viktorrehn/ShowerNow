@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/waterfallsmall">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView android:src="@drawable/main_header_selector"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:alpha="0.5"/>
+
+
+        <TextView android:id="@+id/guidetest1"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginBottom="24dp"
+                  android:text="@string/fluffinessLable3"
+                  android:gravity="center"
+                  android:layout_marginRight="10dp"
+                  android:layout_marginLeft="10dp"
+                  android:layout_marginTop="20dp"
+                  android:lineSpacingExtra="8dp"
+                  android:textColor="#FFFFFF"
+                  android:textSize="20sp"
+                  android:textStyle="bold"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <RadioGroup android:id="@+id/radio_group_fluffiness"
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="fill_parent"
+                        android:layout_height="500dp"
+                        android:layout_marginTop="50dp"
+                        android:orientation="vertical"
+                        android:weightSum="1"
+                        android:gravity="center">
+
+                <RadioButton android:id="@+id/slim"
+                             android:text="@string/fluffinessLable3"
+                             android:drawableStart="@drawable/aaa"
+                             android:layout_width="100dp"
+                             android:layout_height="100dp"
+                             android:layout_gravity="center"
+
+                             android:textColor="#ffffff"
+                             android:buttonTint="#ffffff"/>
+
+                <RadioButton android:id="@+id/medium"
+                             android:layout_width="100dp"
+                             android:layout_height="100dp"
+                             android:layout_gravity="center"
+
+                             android:drawableStart="@drawable/aaa"
+                             android:textColor="#ffffff"
+                             android:buttonTint="#ffffff"/>
+
+                <RadioButton android:id="@+id/heavy"
+                             android:layout_width="100dp"
+                             android:layout_height="100dp"
+                             android:layout_gravity="center"
+
+                             android:drawableStart="@drawable/aaa"
+                             android:textColor="#fefefe"
+                             android:buttonTint="#ffffff"
+                             android:layout_marginTop="40dp"/>
+            </RadioGroup>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:layout_marginBottom="-10dp"
+            android:gravity="bottom">
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="@string/Back"
+                android:background="@drawable/ripple_effect"
+                style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/previousPage_e"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@+id/textView"
+                android:textSize="22sp"
+                android:layout_marginTop="8dp"
+                android:textColor="#ffffff"
+                android:layout_gravity="bottom"
+                android:layout_weight="0.5"
+                android:textStyle="bold"/>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="@string/Next"
+                android:background="@drawable/ripple_effect"
+                style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/nextPage_e"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@+id/textView"
+                android:textSize="22sp"
+                android:layout_marginTop="8dp"
+                android:textColor="#ffffff"
+                android:layout_gravity="bottom"
+                android:layout_weight="0.5"
+                android:textStyle="bold"
+                android:typeface="normal"/>
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+</LinearLayout>
