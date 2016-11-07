@@ -19,6 +19,7 @@ import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.Scopes;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.api.Status;
@@ -43,6 +44,8 @@ import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 import cn.fanrunqi.waveprogress.WaveProgressView;
+
+import static com.google.android.gms.internal.zzs.TAG;
 
 /**
  * Created by akashshrivastava on 31/07/16.
@@ -176,24 +179,26 @@ public class ShowerActivity extends Activity implements OnDataPointListener,
         fabMenu.setMenuButtonColorPressed(getResources().getColor(R.color.colorAccentPressed));
     }
 
+
+
+
+
+
+
     //Auto Gen methods with Fitness API
     //Following methods implemented when using FItness API under OnDataPointListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener
+
     @Override
     protected void onStart() {
         super.onStart();
         mApiClient.connect();
     }
 
-
     @Override
-    public void onConnected(@Nullable Bundle bundle) {
-
+    public void onConnected(Bundle bundle) {
         DataSourcesRequest dataSourceRequest = new DataSourcesRequest.Builder()
                 .setDataTypes( DataType.TYPE_STEP_COUNT_CUMULATIVE )
-
-                //TYPE.RAW(Lower accuracy) doesn't work...TYPE.DERIEVE(Higher accuracy) didnt do anything sadly...
-                //.setDataSourceTypes( DataSource.TYPE_DERIVED )
-
+                .setDataSourceTypes( DataSource.TYPE_RAW )
                 .build();
 
         ResultCallback<DataSourcesResult> dataSourcesResultCallback = new ResultCallback<DataSourcesResult>() {
@@ -209,10 +214,11 @@ public class ShowerActivity extends Activity implements OnDataPointListener,
 
         Fitness.SensorsApi.findDataSources(mApiClient, dataSourceRequest)
                 .setResultCallback(dataSourcesResultCallback);
+
     }
 
     private void registerFitnessDataListener(DataSource dataSource, DataType dataType) {
-        Toast.makeText(ShowerActivity.this, "registerFitnessDataListener", Toast.LENGTH_SHORT).show();
+
         SensorRequest request = new SensorRequest.Builder()
                 .setDataSource( dataSource )
                 .setDataType( dataType )
@@ -229,54 +235,63 @@ public class ShowerActivity extends Activity implements OnDataPointListener,
                     }
                 });
     }
+
     @Override
     public void onConnectionSuspended(int i) {
-
-        Toast.makeText(ShowerActivity.this, "Connection suspended", Toast.LENGTH_SHORT).show();
 
     }
 
     @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Toast.makeText(ShowerActivity.this, "onConnectionFailed", Toast.LENGTH_SHORT).show();
+    public void onConnectionFailed(ConnectionResult connectionResult) {
         if( !authInProgress ) {
             try {
                 authInProgress = true;
                 connectionResult.startResolutionForResult( ShowerActivity.this, REQUEST_OAUTH );
-            } catch(IntentSender.SendIntentException e ) {
+            } catch(IntentSender.SendIntentException e) {
 
             }
         } else {
             Log.e( "GoogleFit", "authInProgress" );
         }
+
     }
 
-    //EVERYTIME a state is changed in the sensor...this method is called! Checks the steps count every 3 seconds
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if( requestCode == REQUEST_OAUTH ) {
+            authInProgress = false;
+            if( resultCode == RESULT_OK ) {
+                if( !mApiClient.isConnecting() && !mApiClient.isConnected() ) {
+                    mApiClient.connect();
+                }
+            } else if( resultCode == RESULT_CANCELED ) {
+                Log.e( "GoogleFit", "RESULT_CANCELED" );
+            }
+        } else {
+            Log.e("GoogleFit", "requestCode NOT request_oauth");
+        }
+    }
+
     @Override
     public void onDataPoint(DataPoint dataPoint) {
-        Toast.makeText(ShowerActivity.this, "onDataPoint", Toast.LENGTH_SHORT).show();
         for( final Field field : dataPoint.getDataType().getFields() ) {
             final Value value = dataPoint.getValue( field );
-
-            //New thread so the steps count as well as the activity operations run at the same time
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-
-                    //TODO Implement steps logic here......
-
-                    Toast.makeText(ShowerActivity.this, "Field: " + field.getName() + " Value: " + value, Toast.LENGTH_SHORT).show();
+                    Log.e( "onDataPoint", "OnDataPoint is being called....." );
+                    Toast.makeText(getApplicationContext(), "Field: " + field.getName() + " Value: " + value, Toast.LENGTH_SHORT).show();
                 }
             });
         }
     }
 
-    //Releasing the sensor data when the app is shut......#SaveBattery
-     /*@Override
+    //Releasing the API when done, saves battery....
+    @Override
     protected void onStop() {
         super.onStop();
 
-        Fitness.SensorsApi.remove(mApiClient, this)
+        Fitness.SensorsApi.remove( mApiClient, this )
                 .setResultCallback(new ResultCallback<Status>() {
                     @Override
                     public void onResult(Status status) {
@@ -285,11 +300,37 @@ public class ShowerActivity extends Activity implements OnDataPointListener,
                         }
                     }
                 });
-    }*/
+    }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putBoolean(AUTH_PENDING, authInProgress);
+
     }
+
+
 }
+
+    //DISABLING Google API and revoking permissions.....not in use now, but maybe later
+  /*  public void disableGoogleFit(){
+        if(!mApiClient.isConnected()){
+            Log.e(TAG, "Google Fit wasn't connected");
+            return;
+        }
+        PendingResult<Status> pendingResult = Fitness.ConfigApi.disableFit(mApiClient);
+
+        pendingResult.setResultCallback(new ResultCallback<Status>() {
+            @Override
+            public void onResult(Status status) {
+                if(status.isSuccess()) {
+                    Log.i(TAG, "Google Fit disabled");
+                }else{
+                    Log.e(TAG, "Google Fit wasn't disabled " + status);
+                }
+            }
+        });
+    }
+
+    */
+
