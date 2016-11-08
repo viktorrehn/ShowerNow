@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity{
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         mViewPager.setAdapter(new MyAdapter(fragmentManager));
+
     }
     public void setNextPage(){
         mViewPager.setCurrentItem(mViewPager.getCurrentItem()+1, true);
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity{
 
 
 class MyAdapter extends FragmentPagerAdapter {
+
 
     public MyAdapter(FragmentManager fm) {
     super(fm);
@@ -103,6 +105,9 @@ class MyAdapter extends FragmentPagerAdapter {
 
 class CustomViewPager extends ViewPager {
     private boolean enabled;
+
+
+
 
      public CustomViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);

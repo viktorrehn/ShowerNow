@@ -57,13 +57,13 @@ public class fragment_C extends Fragment implements View.OnClickListener {
         super.setMenuVisibility(visible);
         if (visible) {
             YoYo.with(Techniques.FadeIn)
-                    .duration(3000)
+                    .duration(500)
                     .playOn(getView().findViewById(R.id.imageView1));
             YoYo.with(Techniques.FadeIn)
-                    .duration(3000)
+                    .duration(500)
                     .playOn(getView().findViewById(R.id.imageView2));
             YoYo.with(Techniques.FadeIn)
-                    .duration(3000)
+                    .duration(500)
                     .playOn(getView().findViewById(R.id.imageView3));
         }
     }

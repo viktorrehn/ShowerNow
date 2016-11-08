@@ -17,6 +17,8 @@
     <string name="Back">Back </string>
 
 
+    <string name="icon">icon </string>
+
     <string name="LoginLable">Already a member? Login! </string>
 
     <string name="showerlable">You should shower in x hrs</string>

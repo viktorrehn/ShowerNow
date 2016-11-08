@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/waterfallsmall">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/waterfallsmall">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -57,19 +58,18 @@
                 android:adjustViewBounds="true"
                 android:src="@drawable/showerinfo"
                 android:id="@+id/imageBathroom"
+                tools:ignore="ContentDescription"
                 android:gravity="bottom" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:text="Next"
+                android:text="@string/Next"
                 android:background="@drawable/ripple_effect"
                 style="?android:attr/borderlessButtonStyle"
                 android:id="@+id/nextPage_a"
                 android:textSize="24sp"
                 android:textColor="#ffffff"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
                 android:textStyle="bold"
                 android:typeface="normal" />
 
